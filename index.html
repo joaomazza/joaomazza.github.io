@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfólio - João Mazza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Google Font: Montserrat -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">João Mazza</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stack">Stack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projetos">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiencia">Experiências</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#educacao">Educação</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section" id="hero">
+        <div class="section-content">
+            <!-- Partículas animadas -->
+            <div class="particles-wrap">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-text">
+                <h1 class="hero-title">João Mazza</h1>
+                <p class="hero-subtitle">Tech Lead & Full Stack Engineer</p>
+                <p class="hero-description">
+                    Com mais de 15 anos de experiência, atuando em projetos inovadores,
+                    liderando equipes multidisciplinares e desenvolvendo soluções
+                    escaláveis. Especialista em tecnologias modernas, automação e
+                    arquitetura de software.
+                </p>
+                <a href="#sobre" class="hero-btn">Saiba Mais</a>
+                </div>
+                <div class="hero-image">
+                <img
+                    src="https://media.licdn.com/dms/image/v2/C4E03AQHE7ZrGrjikkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516891192497?e=1746057600&v=beta&t=_djckfQ2sTuIDloRlhTFmh8ofFcaTj9PMztWdlVjqgM"
+                    alt="João Mazza"
+                    class="profile-photo"
+                />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM (fundo preto, título azul #4fa6db) -->
+    <section  class="section" id="sobre">
+      <div class="section-content container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <p class="section-subtitle">
+          Há mais de <span class="text-highlight">15 anos</span> trabalhando com
+          desenvolvimento de softwares, atuando em projetos de e-commerce, CMS,
+          ERP, CRM, EMR, sistemas bancários e muito mais. Participei de grandes
+          projetos para empresas como
+          <em>Band, Itaú BBA, Michelin, Alcatel, Avaya, Bradesco, Santander</em
+          >, entre outras.
+        </p>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <p style="font-size: 1.1rem; line-height: 1.8">
+              Possuo experiência em mais de
+              <strong>6 linguagens de programação</strong> e atuação
+              multiplataforma (web, mobile, embedded e desktop). Domino
+              metodologias ágeis (Scrum), pipelines de CI/CD (Jenkins, GitLab),
+              conteinerização (Docker, Kubernetes) e boas práticas de
+              arquitetura de software.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8">
+              Ao longo da minha carreira, dediquei-me a
+              <strong>solucionar problemas</strong> de forma criativa e
+              <strong>entregar valor</strong> para o negócio, em sinergia com
+              equipes multidisciplinares.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8">
+              Para mais detalhes sobre projetos e atribuições, confira as seções
+              abaixo ou visite meu
+              <a
+                href="https://www.linkedin.com/in/jo%C3%A3o-mazza/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK (fundo preto, título roxo #7f42db) -->
+    <section  class="section"  id="stack" class="py-4">
+      <div class="section-content container">
+        <h2 class="text-center mb-3">Minha Stack</h2>
+        <p class="text-center mb-4" style="font-size: 0.95rem">
+          Tecnologias e ferramentas que utilizo em meus projetos, separadas por
+          tópicos para melhor visualização.
+        </p>
+
+        <div class="row g-3">
+          <!-- LINGUAGENS -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-2">Linguagens</h5>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <img
+                src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"
+                alt="Java"
+              />
+              <img
+                src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white"
+                alt=".NET"
+              />
+              <img
+                src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"
+                alt="PHP"
+              />
+              <img
+                src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                alt="Python"
+              />
+              <img
+                src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+                alt="Node.js"
+              />
+              <img
+                src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+                alt="TypeScript"
+              />
+              <img
+                src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000"
+                alt="JavaScript"
+              />
+            </div>
+          </div>
+
+          <!-- FRAMEWORKS -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-2">Frameworks</h5>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <img
+                src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"
+                alt="Angular"
+              />
+              <img
+                src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+                alt="React"
+              />
+              <img
+                src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white"
+                alt="Spring Boot"
+              />
+              <img
+                src="https://img.shields.io/badge/Yii2-777BB4?style=for-the-badge&logo=php&logoColor=white"
+                alt="Yii2"
+              />
+              <img
+                src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white"
+                alt="Express.js"
+              />
+              <img
+                src="https://img.shields.io/badge/Flask-000?style=for-the-badge&logo=flask&logoColor=white"
+                alt="Flask"
+              />
+              <img
+                src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"
+                alt="Laravel"
+              />
+              <img
+                src="https://img.shields.io/badge/.NET_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white"
+                alt=".NET Core"
+              />
+            </div>
+          </div>
+
+          <!-- DEVOPS -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-2">DevOps</h5>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <img
+                src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white"
+                alt="Jenkins"
+              />
+              <img
+                src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"
+                alt="Docker"
+              />
+              <img
+                src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white"
+                alt="SonarQube"
+              />
+              <img
+                src="https://img.shields.io/badge/CI/CD%20Pipelines-00457C?style=for-the-badge&logo=githubactions&logoColor=white"
+                alt="CI/CD Pipelines"
+              />
+              <img
+                src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white"
+                alt="Terraform"
+              />
+            </div>
+          </div>
+
+          <!-- BASE DE DADOS -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-2">Base de Dados</h5>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <img
+                src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"
+                alt="MongoDB"
+              />
+              <img
+                src="https://img.shields.io/badge/MySQL-0000?style=for-the-badge&logo=mysql&logoColor=white"
+                alt="MySQL"
+              />
+              <img
+                src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white"
+                alt="SQL Server"
+              />
+              <img
+                src="https://img.shields.io/badge/Hadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=000"
+                alt="Hadoop"
+              />
+            </div>
+          </div>
+
+          <!-- INFRAESTRUTURA -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-2">Infraestrutura</h5>
+            <!-- Exemplo de badges (ajuste conforme o que realmente utiliza) -->
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <img
+                src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"
+                alt="AWS"
+              />
+              <img
+                src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white"
+                alt="Azure"
+              />
+              <img
+                src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"
+                alt="Google Cloud"
+              />
+              <img
+                src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"
+                alt="Linux"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </section>
+
+    <!-- PROJETOS (fundo preto, título #6eb1a0) -->
+    <section  class="section"  id="projetos">
+      <div class="section-content container">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <p class="section-subtitle">
+          Alguns dos projetos e soluções nos quais atuei diretamente, seja
+          liderando equipes, implementando o core tecnológico ou participando de
+          forma colaborativa.
+        </p>
+        <div class="row g-4">
+          <!-- Projeto 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card p-3 h-100">
+              <h3 class="card-title">DW3 - Plataforma de Gestão</h3>
+              <h6 class="card-subtitle">Tech Lead e Full Stack</h6>
+              <p class="card-text mt-2">
+                Desenvolvimento de uma plataforma modular para gestão
+                corporativa, integrando front-end (Angular 8, RxJS) com back-end
+                em microserviços (Java Spring, Node.js) e automação de processos
+                (RPA) para reduzir tarefas repetitivas.
+              </p>
+            </div>
+          </div>
+          <!-- Projeto 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card p-3 h-100">
+              <h3 class="card-title">SPC Brasil - Microfrontends</h3>
+              <h6 class="card-subtitle">Analista & Full Stack</h6>
+              <p class="card-text mt-2">
+                Implementação de microfrontends em React, Redux e GraphQL.
+                Otimização de ETL e criação de dashboards para relatórios
+                gerenciais. Containerização de serviços com Docker e
+                orquestração em Kubernetes.
+              </p>
+            </div>
+          </div>
+          <!-- Projeto 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card p-3 h-100">
+              <h3 class="card-title">Ortiz Gaming - Sistemas de Jogos</h3>
+              <h6 class="card-subtitle">Tech Lead & Full Stack</h6>
+              <p class="card-text mt-2">
+                Desenvolvimento de sistemas administrativos para gerenciar jogos
+                e apostas. Criação de jogos com Phaser JS e Godot, além de
+                integração com back-end em .NET Core e Node.js.
+              </p>
+            </div>
+          </div>
+          <!-- Projeto 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card p-3 h-100">
+              <h3 class="card-title">PR Newswire - Processos e Valuation</h3>
+              <h6 class="card-subtitle">Analista & Full Stack</h6>
+              <p class="card-text mt-2">
+                Criação de sistemas para controle de processos, análise de
+                métricas e valuation. Stack principal usando Angular 2, Node.js
+                e PHP (Laravel, CodeIgniter, Symfony).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section  class="section"  id="projetos-01">
+      <div class="section-content container">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <p class="section-subtitle">
+          Alguns dos projetos e soluções nos quais atuei diretamente, seja
+          liderando equipes, implementando o core tecnológico ou participando de
+          forma colaborativa.
+        </p>
+
+        <div class="grid-container">
+          <div class="card">
+            <h3>DW3 - Plataforma de Gestão</h3>
+            <p>Tech Lead e Full Stack</p>
+            <p>Desenvolvimento de uma plataforma modular...</p>
+          </div>
+          <div class="card">
+            <h3>SPC Brasil - Microfrontends</h3>
+            <p>Analista & Full Stack</p>
+            <p>Implementação de microfrontends em React...</p>
+          </div>
+          <div class="card">
+            <h3>Ortiz Gaming - Sistemas de Jogos</h3>
+            <p>Tech Lead e Full Stack</p>
+            <p>Desenvolvimento de sistemas administrativos...</p>
+          </div>
+          <div class="card">
+            <h3>PR Newswire - Processos e Valuation</h3>
+            <p>Analista & Full Stack</p>
+            <p>Criação de sistemas para controle de processos...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section  class="section"  id="projetos-02">
+      <div class="section-content container">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <p class="section-subtitle">
+          Rolagem horizontal para ver todos os projetos.
+        </p>
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide card">
+              <h3>DW3 - Plataforma de Gestão</h3>
+              <p>Tech Lead</p>
+              <p>Desenvolvimento...</p>
+            </div>
+            <div class="swiper-slide card">
+              <h3>SPC Brasil - Microfrontends</h3>
+              <p>Analista</p>
+              <p>React, GraphQL...</p>
+            </div>
+            <div class="swiper-slide card">
+              <h3>Ortiz Gaming - Sistemas de Jogos</h3>
+              <p>Tech Lead</p>
+              <p>Phaser JS, Node...</p>
+            </div>
+            <div class="swiper-slide card">
+              <h3>PR Newswire - Processos</h3>
+              <p>Analista</p>
+              <p>Angular, PHP...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section  class="section"  id="projetos-03">
+      <div class="section-content container">
+        <h2 class="section-title">Projetos em Destaque</h2>
+
+        <div class="zigzag-container">
+          <div class="zigzag-item">
+            <h3>DW3 - Plataforma de Gestão</h3>
+            <p>Tech Lead e Full Stack</p>
+            <p>Desenvolvimento de uma plataforma modular...</p>
+          </div>
+          <div
+            class="zigzag-item img-bg"
+            style="background-image: url('https://picsum.photos/300/200')"
+          ></div>
+
+          <div
+            class="zigzag-item img-bg"
+            style="background-image: url('https://picsum.photos/300/200')"
+          ></div>
+          <div class="zigzag-item">
+            <h3>SPC Brasil - Microfrontends</h3>
+            <p>Analista & Full Stack</p>
+            <p>Implementação de microfrontends em React...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section  class="section"  id="projetos-04">
+      <div class="section-content container">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <p class="section-subtitle">
+          Passe o mouse sobre os cartões para mais detalhes.
+        </p>
+
+        <div class="hover-grid">
+          <div class="hover-card">
+            <h3>DW3 - Plataforma de Gestão</h3>
+            <p>Tech Lead e Full Stack</p>
+            <p>Desenvolvimento...</p>
+          </div>
+          <div class="hover-card">
+            <h3>SPC Brasil - Microfrontends</h3>
+            <p>Analista & Full Stack</p>
+            <p>React, GraphQL...</p>
+          </div>
+          <div class="hover-card">
+            <h3>Ortiz Gaming - Sistemas de Jogos</h3>
+            <p>Tech Lead & Full Stack</p>
+            <p>Phaser JS, Node...</p>
+          </div>
+          <div class="hover-card">
+            <h3>PR Newswire - Processos</h3>
+            <p>Analista & Full Stack</p>
+            <p>Angular, PHP...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Adicionando SwiperJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: true,
+        pagination: { clickable: true },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    </script>
+
+    <!-- EXPERIÊNCIAS (fundo preto, título #fbad17) -->
+    <section  class="section"  id="experiencia">
+      <div class="section-content container">
+        <h2 class="section-title">Experiências</h2>
+        <p class="section-subtitle">
+          Uma visão geral das minhas principais posições e responsabilidades ao
+          longo da carreira.
+        </p>
+        <div class="row g-4">
+          <!-- DW3 -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Tech Lead e Full Stack Developer</h4>
+              <h6 class="card-subtitle mb-2">
+                DW3 Tecnologia (10/2019 – Atual)
+              </h6>
+              <p class="card-text">
+                Foco em front-end (Angular 8, RxJS) e back-end (Node.js, Java
+                Spring). Liderança de equipe, aplicação de Scrum, pipelines de
+                CI/CD, Docker, Jenkins, criação de microserviços e orquestração
+                de contêineres.
+              </p>
+            </div>
+          </div>
+          <!-- SPC Brasil -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Analista e Full Stack Developer</h4>
+              <h6 class="card-subtitle mb-2">SPC Brasil (08/2018 – 09/2019)</h6>
+              <p class="card-text">
+                Projetos em React, Redux, GraphQL, Node.js e Python.
+                Microfrontends, bancos de dados (MongoDB, Oracle), pipelines
+                DevOps e orquestração com Docker/Kubernetes.
+              </p>
+            </div>
+          </div>
+          <!-- Ortiz Gaming -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Tech Lead & Full Stack Developer</h4>
+              <h6 class="card-subtitle mb-2">
+                Ortiz Gaming (08/2017 – 08/2018)
+              </h6>
+              <p class="card-text">
+                Liderança de equipe e desenvolvimento de aplicações web para
+                administração de jogos. Tecnologias: Angular 5, TypeScript,
+                Node.js, .NET Core, Java, Phaser JS e Godot.
+              </p>
+            </div>
+          </div>
+          <!-- PR Newswire -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Analista e Full Stack Developer</h4>
+              <h6 class="card-subtitle mb-2">
+                PR Newswire (02/2017 – 07/2017)
+              </h6>
+              <p class="card-text">
+                Desenvolvimento de sistemas de gestão, processos e análise de
+                dados. Stack: Angular, Node.js, PHP (Laravel, CodeIgniter,
+                Symfony), modelagem de banco de dados e metodologia ágil.
+              </p>
+            </div>
+          </div>
+          <!-- Accenture -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Analista e Software Developer</h4>
+              <h6 class="card-subtitle mb-2">Accenture (09/2016 – 02/2017)</h6>
+              <p class="card-text">
+                Desenvolvimento de sistemas para financiamento, utilizando
+                Bootstrap 4, Angular (JS e 2), Node.js, Java 8, Hibernate e
+                Spring. Integração com serviços internos e bancos de dados
+                corporativos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCAÇÃO (fundo preto, título #4fa6db) -->
+    <section  class="section"  id="educacao">
+      <div class="section-content container">
+        <h2 class="section-title">Educação</h2>
+        <p class="section-subtitle">
+          Formação acadêmica e cursos que apoiam minha atuação em tecnologia.
+        </p>
+        <div class="row g-4">
+          <!-- FIAP MBA Arquitetura de Soluções -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">MBA em Arquitetura de Soluções</h4>
+              <h6 class="card-subtitle mb-2">FIAP (Período de realização)</h6>
+              <p class="card-text">
+                Pós-graduação focada em padrões de arquitetura, escalabilidade,
+                microserviços, cloud computing e DevOps, capacitando para o
+                desenho de soluções robustas e alinhadas às necessidades de
+                negócio.
+              </p>
+            </div>
+          </div>
+          <!-- IFSP -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Sistemas de Informação</h4>
+              <h6 class="card-subtitle mb-2">IFSP (07/2011 – 07/2017)</h6>
+              <p class="card-text">
+                Foco em análise, desenvolvimento e manutenção de sistemas de
+                informação. Projetos práticos envolvendo programação, banco de
+                dados e metodologias de software.
+              </p>
+            </div>
+          </div>
+          <!-- Fleming -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Computer Engineer Technology</h4>
+              <h6 class="card-subtitle mb-2">
+                Sir Sandford Fleming College (09/2014 – 05/2015)
+              </h6>
+              <p class="card-text">
+                Engenharia de computação, gerência de projetos e design de
+                sistemas complexos. Bolsa Science Without Borders e Academic
+                Excellence Award.
+              </p>
+            </div>
+          </div>
+          <!-- TecnoPonta -->
+          <div class="col-md-6">
+            <div class="card p-3 h-100">
+              <h4 class="card-title">Technical Course PHP + MySQL</h4>
+              <h6 class="card-subtitle mb-2">TecnoPonta (02/2011 – 03/2011)</h6>
+              <p class="card-text">
+                Desenvolvimento de páginas dinâmicas, integração com bancos de
+                dados, soluções de e-commerce e lojas virtuais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / FOOTER -->
+    <section  class="section p-0" id="contato">
+      <footer class="mt-5">
+        <div class="section-content container">
+          <h2 class="section-title">Contato</h2>
+          <p class="section-subtitle">
+            Interessado(a) em conversar sobre oportunidades, projetos ou
+            parcerias?
+          </p>
+          <div class="row">
+            <div class="col-12">
+              <p style="text-align: center; margin-bottom: 0.5rem">
+                <strong>Telefone:</strong> <br />
+                <span style="font-size: 1rem">+55 (11) 96956-1678</span>
+                <br /><br />
+                <strong>E-mail:</strong> <br />
+                <a href="mailto:joao.mazza@hotmail.com" class="footer-link"
+                  >joao.mazza@hotmail.com</a
+                >
+              </p>
+              <p style="text-align: center">
+                <a
+                  href="https://www.linkedin.com/in/jo%C3%A3o-mazza/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer-link"
+                >
+                  LinkedIn
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color: #333" />
+        <p>&copy; 2025 João Mazza - Todos os direitos reservados.</p>
+      </footer>
+    </section>
+
+
+    <!-- Intersection Observer para animar texto das seções -->
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const options = {
+            root: null,
+            threshold: 0.3 // quando 30% da seção estiver visível, ativa
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+            entry.target.classList.add('active');
+            } else {
+            entry.target.classList.remove('active');
+            }
+        });
+        }, options);
+    
+        sections.forEach(sec => {
+        observer.observe(sec);
+        });
+    </script>
+    <!-- Bootstrap 5 JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
