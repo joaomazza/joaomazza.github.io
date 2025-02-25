@@ -1,450 +1,677 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Portfólio - João Mazza</title>
-  <!-- Favicon -->
-  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/code.png" type="image/png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  >
+
+  <!-- Google Font: Montserrat -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* =========================================
+       FONTE E CORES BASE
+    ========================================== */
+    :root {
+      --color-sobre: #4fa6db;
+      --color-stack: #7f42db;
+      --color-projetos: #6eb1a0;
+      --color-experiencia: #fbad17;
+      --color-educacao: #4fa6db;
+      --color-contato: #7f42db;
     }
 
     body {
-      font-family: 'Arial', sans-serif;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Evitar scroll horizontal */
+      background-color: #000; /* Fundo preto em todas as seções */
+      color: #f8f8f8; /* Texto claro */
     }
 
-    /* Layout do cabeçalho e navegação */
-    header {
-      width: 100%;
-      height: 80px;
-      background-color: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-      position: fixed;
-      top: 0;
-      z-index: 999;
-    }
-
-    .logo {
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: #fff;
+    a, a:hover, a:focus, a:visited {
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
+    }
+    a {
+      color: #ffc107;
+    }
+    a:hover {
+      color: #ffd452;
     }
 
-    nav ul li a:hover {
-      color: #57d4ff;
+    /* =========================================
+       NAVBAR
+    ========================================== */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+      z-index: 1000;
+    }
+    .navbar-brand {
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 400;
+    }
+    .nav-link:hover {
+      color: #ffc107 !important;
     }
 
-    /* Seção hero (Home) */
-    .hero {
+    /* =========================================
+       HERO
+    ========================================== */
+    #hero {
+      position: relative;
       width: 100%;
-      height: 100vh;
-      background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding-top: 80px; /* compensar o header fixo */
+      min-height: 100vh;
+      background: url("https://media.licdn.com/dms/image/v2/C4D16AQEpzt9laRcD4A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1647012597871?e=1746057600&v=beta&t=cN4IcyGUlgyXH5PD7KVQ5a4NVQnFi535_mBjdhTz96k")
+                  center center no-repeat #000;
+      color: #fff;
+      overflow: hidden; /* para conter partículas animadas */
+    }
+
+    /* Overlay do Hero */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
     }
 
     .hero-content {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 600px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn-primary {
-      background-color: #57d4ff;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s;
-      text-decoration: none;
-    }
-
-    .btn-primary:hover {
-      background-color: #2ba6d3;
-    }
-
-    /* Seções gerais */
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
       position: relative;
-    }
-
-    section h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: #57d4ff;
-      margin: 0.5rem auto;
-    }
-
-    /* Seção Sobre */
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .about-content p {
-      margin: 0.5rem 0;
-      text-align: justify;
-    }
-
-    /* Seção experiências (Acadêmicas e Profissionais) */
-    .experience-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .experience-item {
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .experience-item h3 {
-      margin-bottom: 0.5rem;
-    }
-    .experience-item span {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      color: #555;
-    }
-    .experience-item p {
-      text-align: justify;
-    }
-
-    /* Seção Skills (soft/hard) */
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      margin-top: 2rem;
-    }
-
-    .soft-skills, .hard-skills {
-      width: 100%;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .soft-skills ul, .hard-skills ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
       justify-content: center;
-      margin-top: 1rem;
+      min-height: 100vh;
+      text-align: center;
+      padding: 0 1rem;
     }
 
-    /* Seção Projetos */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
     }
-    .project-item {
-      background-color: #f9f9f9;
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 800px;
+    }
+    .hero-btn {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      border: 2px solid #ffc107;
+      color: #ffc107;
+      background-color: transparent;
+    }
+    .hero-btn:hover {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    /* =========================================
+       ANIMAÇÃO - PARTÍCULAS
+    ========================================== */
+    .particles-wrap {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      background-color: #ffd452;
+      opacity: 0.6;
+      border-radius: 50%;
+      animation: floatParticle 10s linear infinite;
+    }
+    .particle:nth-child(1) {
+      width: 40px; height: 40px; top: 20%; left: 10%;
+      animation-duration: 12s;
+    }
+    .particle:nth-child(2) {
+      width: 30px; height: 30px; top: 50%; left: 40%;
+      animation-duration: 9s;
+    }
+    .particle:nth-child(3) {
+      width: 60px; height: 60px; top: 70%; left: 70%;
+      animation-duration: 15s;
+    }
+    .particle:nth-child(4) {
+      width: 20px; height: 20px; top: 30%; left: 80%;
+      animation-duration: 11s;
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-50px) translateX(30px);
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+    }
+
+    /* =========================================
+       SEÇÕES
+       Mantemos todas com fundo preto,
+       Mas destacamos TÍTULOS com cores diferentes
+    ========================================== */
+
+    section {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .text-highlight {
+      color: #ffd452;
+      font-weight: 600;
+    }
+
+    /* Cores específicas para cada seção (apenas no TÍTULO) */
+    #sobre .section-title {
+      color: var(--color-sobre);
+    }
+    #stack .section-title {
+      color: var(--color-stack);
+    }
+    #projetos .section-title {
+      color: var(--color-projetos);
+    }
+    #experiencia .section-title {
+      color: var(--color-experiencia);
+    }
+    #educacao .section-title {
+      color: var(--color-educacao);
+    }
+    #contato .section-title {
+      color: var(--color-contato);
+    }
+
+    /* =========================================
+       CARDS (Projetos, Experiências, etc.)
+    ========================================== */
+    .card {
+      background-color: #111; /* ou #1a1a1a para um cinza mais claro */
+      border: 1px solid #222;
       border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #f8f8f8;
+      transition: transform 0.3s ease;
     }
-    .project-item h3 {
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 1.25rem;
       margin-bottom: 0.5rem;
     }
-    .project-item a {
-      color: #57d4ff;
-      text-decoration: none;
-      font-weight: bold;
+    .card-subtitle {
+      font-weight: 300;
+      margin-bottom: 1rem;
     }
-    .project-item a:hover {
-      text-decoration: underline;
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
     }
 
-    /* Seção Contato / Rodapé */
+    /* =========================================
+       FOOTER
+    ========================================== */
     footer {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
+      background-color: #111;
       padding: 2rem 1rem;
     }
     footer p {
-      margin-bottom: 0.5rem;
+      margin: 0;
+      color: #888;
+      font-size: 0.9rem;
+      text-align: center;
     }
-    footer a {
-      color: #57d4ff;
-      text-decoration: none;
+    .footer-link {
+      color: #ffc107;
     }
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      section {
-        padding: 2rem 1rem;
-      }
+    .footer-link:hover {
+      color: #ffd452;
     }
 
   </style>
 </head>
 <body>
 
-  <!-- Cabeçalho / Navegação -->
-  <header>
-    <div class="logo">João Mazza</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#academico">Acadêmico</a></li>
-        <li><a href="#profissional">Profissional</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="#">João Mazza</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#hero">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#stack">Stack</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projetos">Projetos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experiencia">Experiências</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#educacao">Educação</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Seção Home/Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Bem-vindo(a) ao meu Portfólio</h1>
-      <p>Sou desenvolvedor e entusiasta de tecnologia, sempre em busca de novas soluções e desafios.</p>
-      <a href="#sobre" class="btn-primary">Saiba Mais</a>
+  <!-- HERO -->
+  <section id="hero">
+    <!-- Partículas animadas -->
+    <div class="particles-wrap">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- overlay -->
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1 class="hero-title">João Mazza</h1>
+      <p class="hero-subtitle">
+        Tech Lead & Full Stack Engineer
+      </p>
+      <a href="#sobre" class="hero-btn">Saiba Mais</a>
     </div>
   </section>
 
-  <!-- Seção Sobre -->
+  <!-- SOBRE MIM (fundo preto, título azul #4fa6db) -->
   <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <div class="about-content">
-      <p>
-        Olá, meu nome é <strong>João Mazza</strong>. Tenho experiência em desenvolvimento de software e diversas
-        iniciativas envolvendo tecnologia. Ao longo da minha carreira, trabalhei com <em>front-end</em> e <em>back-end</em>, 
-        lidando com projetos de diferentes setores. Acredito no poder da inovação para simplificar processos e 
-        facilitar a vida das pessoas.
+    <div class="container">
+      <h2 class="section-title">Sobre Mim</h2>
+      <p class="section-subtitle">
+        Há mais de <span class="text-highlight">15 anos</span> trabalhando com desenvolvimento de softwares,
+        atuando em projetos de e-commerce, CMS, ERP, CRM, EMR, sistemas bancários e muito mais. Participei
+        de grandes projetos para empresas como <em>Band, Itaú BBA, Michelin, Alcatel, Avaya, Bradesco, Santander</em>,
+        entre outras.
       </p>
-      <p>
-        Sou graduado em [<em>Seu Curso</em>] pela [<em>Sua Instituição</em>] e atualmente busco aprimorar minhas habilidades 
-        em [<em>Linguagem ou Framework de interesse</em>]. Possuo também forte interesse em metodologias ágeis, 
-        DevOps e cultura de entrega contínua.
-      </p>
-      <p>
-        <strong>Resumo da Carreira:</strong> Focado na entrega de resultados, tenho <em>X anos de experiência</em> na área 
-        de TI, já atuei como [<em>Função</em>] em empresas de grande e médio porte, participando ativamente do 
-        desenvolvimento de soluções escaláveis e colaborando em equipes multidisciplinares.
-      </p>
-      <p>
-        Para mais detalhes, visite meu <a href="https://www.linkedin.com/in/jo%C3%A3o-mazza/" target="_blank">LinkedIn</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- Seção Experiências Acadêmicas -->
-  <section id="academico">
-    <h2>Experiências Acadêmicas</h2>
-    <div class="experience-container">
-      <!-- Exemplo 1 -->
-      <div class="experience-item">
-        <h3>Bacharelado em Ciência da Computação</h3>
-        <span>[Universidade XYZ] | [2016 - 2020]</span>
-        <p>
-          Durante o curso, participei de projetos de pesquisa focados em Inteligência Artificial e 
-          de grupos de extensão voltados para desenvolvimento web e mobile. Também fui monitor de 
-          Estrutura de Dados e participei de competições de programação.
-        </p>
-      </div>
-
-      <!-- Exemplo 2 -->
-      <div class="experience-item">
-        <h3>Pós-Graduação em Engenharia de Software</h3>
-        <span>[Instituição ABC] | [2021 - 2022]</span>
-        <p>
-          Aprofundei meus conhecimentos em padrões de projeto, arquitetura de software 
-          e metodologias ágeis. Desenvolvi um projeto final aplicando Microservices e 
-          Cloud Computing em uma aplicação de e-commerce.
-        </p>
-      </div>
-      
-      <!-- Adicione mais conforme suas experiências -->
-    </div>
-  </section>
-
-  <!-- Seção Experiências Profissionais -->
-  <section id="profissional">
-    <h2>Experiências Profissionais</h2>
-    <div class="experience-container">
-      <!-- Exemplo 1 -->
-      <div class="experience-item">
-        <h3>Desenvolvedor Full Stack</h3>
-        <span>Empresa 1 | [2022 - Presente]</span>
-        <p>
-          Responsável pelo desenvolvimento e manutenção de aplicações web em [React.js, Node.js, etc.]. 
-          Participei de todo o ciclo de vida do produto, desde a concepção até a implantação em 
-          ambiente de produção. Trabalhei em conjunto com equipes de Design e QA, seguindo metodologias ágeis.
-        </p>
-      </div>
-
-      <!-- Exemplo 2 -->
-      <div class="experience-item">
-        <h3>Analista de Sistemas</h3>
-        <span>Empresa 2 | [2019 - 2022]</span>
-        <p>
-          Atuei na análise, especificação e implementação de soluções em [Java, Spring Boot, etc.]. 
-          Integrei sistemas corporativos, fiz tunning de banco de dados e implementei boas práticas de 
-          desenvolvimento, como testes unitários e code review. 
-        </p>
-      </div>
-      
-      <!-- Adicione outras experiências conforme sua trajetória -->
-    </div>
-  </section>
-
-  <!-- Seção Soft Skills e Hard Skills -->
-  <section id="skills">
-    <h2>Habilidades</h2>
-    <div class="skills-container">
-      <div class="soft-skills">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Comunicação</li>
-          <li>Trabalho em Equipe</li>
-          <li>Proatividade</li>
-          <li>Flexibilidade</li>
-          <li>Resiliência</li>
-        </ul>
-      </div>
-
-      <div class="hard-skills">
-        <h3>Hard Skills (com Badges)</h3>
-        <ul>
-          <!-- Exemplos de badges usando shields.io -->
-          <li>
-            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge"/>
-          </li>
-          <li>
-            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 Badge"/>
-          </li>
-          <li>
-            <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge"/>
-          </li>
-          <li>
-            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Badge"/>
-          </li>
-          <li>
-            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"/>
-          </li>
-          <!-- Adicione outras badges conforme suas stacks -->
-        </ul>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <p style="font-size:1.1rem; line-height:1.8;">
+            Possuo experiência em mais de <strong>6 linguagens de programação</strong> e atuação multiplataforma 
+            (web, mobile, embedded e desktop). Domino metodologias ágeis (Scrum), pipelines de CI/CD (Jenkins, GitLab), 
+            conteinerização (Docker, Kubernetes) e boas práticas de arquitetura de software.
+          </p>
+          <p style="font-size:1.1rem; line-height:1.8;">
+            Ao longo da minha carreira, dediquei-me a <strong>solucionar problemas</strong> de forma criativa e 
+            <strong>entregar valor</strong> para o negócio, em sinergia com equipes multidisciplinares.
+          </p>
+          <p style="font-size:1.1rem; line-height:1.8;">
+            Para mais detalhes sobre projetos e atribuições, confira as seções abaixo ou visite meu 
+            <a href="https://www.linkedin.com/in/jo%C3%A3o-mazza/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção Projetos -->
+  <!-- STACK (fundo preto, título roxo #7f42db) -->
+  <section id="stack" class="py-4">
+    <div class="container">
+      <h2 class="text-center mb-3">Minha Stack</h2>
+      <p class="text-center mb-4" style="font-size:0.95rem;">
+        Tecnologias e ferramentas que utilizo em meus projetos,
+        separadas por tópicos para melhor visualização.
+      </p>
+  
+      <div class="row g-3">
+        <!-- LINGUAGENS -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="mb-2">Linguagens</h5>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java" />
+            <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white" alt=".NET" />
+            <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP" />
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+            <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" />
+          </div>
+        </div>
+  
+        <!-- FRAMEWORKS -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="mb-2">Frameworks</h5>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+            <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+            <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot" />
+            <img src="https://img.shields.io/badge/Yii2-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="Yii2" />
+            <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+            <img src="https://img.shields.io/badge/Flask-000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+            <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
+            <img src="https://img.shields.io/badge/.NET_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white" alt=".NET Core" />
+          </div>
+        </div>
+  
+        <!-- DEVOPS -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="mb-2">DevOps</h5>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins" />
+            <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+            <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white" alt="SonarQube" />
+            <img src="https://img.shields.io/badge/CI/CD%20Pipelines-00457C?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD Pipelines" />
+            <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform" />
+          </div>
+        </div>
+  
+        <!-- BASE DE DADOS -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="mb-2">Base de Dados</h5>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+            <img src="https://img.shields.io/badge/MySQL-0000?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+            <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" />
+            <img src="https://img.shields.io/badge/Hadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=000" alt="Hadoop" />
+          </div>
+        </div>
+  
+        <!-- INFRAESTRUTURA -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="mb-2">Infraestrutura</h5>
+          <!-- Exemplo de badges (ajuste conforme o que realmente utiliza) -->
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+            <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure" />
+            <img src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" />
+            <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+          </div>
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </section>
+  
+
+  <!-- PROJETOS (fundo preto, título #6eb1a0) -->
   <section id="projetos">
-    <h2>Projetos</h2>
-    <div class="projects-container">
-      <!-- Projeto Exemplo 1 -->
-      <div class="project-item">
-        <h3>Projeto XYZ</h3>
-        <p>
-          Aplicação web desenvolvida em React e Node.js para gerenciamento de tarefas, com integração 
-          a um banco de dados NoSQL. Destaque para autenticação JWT e testes unitários.
-        </p>
-        <a href="#" target="_blank">Ver no GitHub</a>
+    <div class="container">
+      <h2 class="section-title">Projetos em Destaque</h2>
+      <p class="section-subtitle">
+        Alguns dos projetos e soluções nos quais atuei diretamente, seja liderando equipes, 
+        implementando o core tecnológico ou participando de forma colaborativa.
+      </p>
+      <div class="row g-4">
+        <!-- Projeto 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-3 h-100">
+            <h3 class="card-title">DW3 - Plataforma de Gestão</h3>
+            <h6 class="card-subtitle">Tech Lead e Full Stack</h6>
+            <p class="card-text mt-2">
+              Desenvolvimento de uma plataforma modular para gestão corporativa,
+              integrando front-end (Angular 8, RxJS) com back-end em microserviços (Java Spring, Node.js)
+              e automação de processos (RPA) para reduzir tarefas repetitivas.
+            </p>
+          </div>
+        </div>
+        <!-- Projeto 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-3 h-100">
+            <h3 class="card-title">SPC Brasil - Microfrontends</h3>
+            <h6 class="card-subtitle">Analista & Full Stack</h6>
+            <p class="card-text mt-2">
+              Implementação de microfrontends em React, Redux e GraphQL.
+              Otimização de ETL e criação de dashboards para relatórios gerenciais.
+              Containerização de serviços com Docker e orquestração em Kubernetes.
+            </p>
+          </div>
+        </div>
+        <!-- Projeto 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-3 h-100">
+            <h3 class="card-title">Ortiz Gaming - Sistemas de Jogos</h3>
+            <h6 class="card-subtitle">Tech Lead & Full Stack</h6>
+            <p class="card-text mt-2">
+              Desenvolvimento de sistemas administrativos para gerenciar jogos e apostas.
+              Criação de jogos com Phaser JS e Godot, além de integração com back-end em .NET Core e Node.js.
+            </p>
+          </div>
+        </div>
+        <!-- Projeto 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-3 h-100">
+            <h3 class="card-title">PR Newswire - Processos e Valuation</h3>
+            <h6 class="card-subtitle">Analista & Full Stack</h6>
+            <p class="card-text mt-2">
+              Criação de sistemas para controle de processos, análise de métricas e valuation.
+              Stack principal usando Angular 2, Node.js e PHP (Laravel, CodeIgniter, Symfony).
+            </p>
+          </div>
+        </div>
       </div>
-      <!-- Projeto Exemplo 2 -->
-      <div class="project-item">
-        <h3>Projeto ABC</h3>
-        <p>
-          Plataforma de e-commerce criada com Java e Spring Boot, utilizando padrão de microsserviços 
-          e deploy em ambiente cloud. Recursos de carrinho de compras, gateway de pagamento e 
-          integração com serviços de entrega.
-        </p>
-        <a href="#" target="_blank">Ver no GitHub</a>
-      </div>
-      <!-- Adicione quantos projetos desejar -->
     </div>
   </section>
 
-  <!-- Seção Contato / Rodapé -->
-  <section id="contato">
-    <footer>
-      <h2>Contato</h2>
-      <p>Quer conversar sobre projetos ou oportunidades?</p>
-      <p>Envie um e-mail para: <a href="mailto:seuemail@dominio.com">seuemail@dominio.com</a></p>
-      <p>Ou acesse meu <a href="https://www.linkedin.com/in/jo%C3%A3o-mazza/" target="_blank">LinkedIn</a>.</p>
-      <p>
-        Referências de design e portfólio:
-        <a href="https://github.com/emmabostian/developer-portfolios?tab=readme-ov-file" target="_blank">GitHub Portfolios</a>, 
-        <a href="https://avisek.codeltix.com/" target="_blank">Avisek</a>, 
-        <a href="https://m-mazza.github.io/sobremim/" target="_blank">M-Mazza</a>.
+  <!-- EXPERIÊNCIAS (fundo preto, título #fbad17) -->
+  <section id="experiencia">
+    <div class="container">
+      <h2 class="section-title">Experiências</h2>
+      <p class="section-subtitle">
+        Uma visão geral das minhas principais posições e responsabilidades ao longo da carreira.
       </p>
+      <div class="row g-4">
+        <!-- DW3 -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Tech Lead e Full Stack Developer</h4>
+            <h6 class="card-subtitle mb-2">DW3 Tecnologia (10/2019 – Atual)</h6>
+            <p class="card-text">
+              Foco em front-end (Angular 8, RxJS) e back-end (Node.js, Java Spring).
+              Liderança de equipe, aplicação de Scrum, pipelines de CI/CD, Docker,
+              Jenkins, criação de microserviços e orquestração de contêineres.
+            </p>
+          </div>
+        </div>
+        <!-- SPC Brasil -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Analista e Full Stack Developer</h4>
+            <h6 class="card-subtitle mb-2">SPC Brasil (08/2018 – 09/2019)</h6>
+            <p class="card-text">
+              Projetos em React, Redux, GraphQL, Node.js e Python.
+              Microfrontends, bancos de dados (MongoDB, Oracle), pipelines DevOps e
+              orquestração com Docker/Kubernetes.
+            </p>
+          </div>
+        </div>
+        <!-- Ortiz Gaming -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Tech Lead & Full Stack Developer</h4>
+            <h6 class="card-subtitle mb-2">Ortiz Gaming (08/2017 – 08/2018)</h6>
+            <p class="card-text">
+              Liderança de equipe e desenvolvimento de aplicações web para administração de jogos.
+              Tecnologias: Angular 5, TypeScript, Node.js, .NET Core, Java, Phaser JS e Godot.
+            </p>
+          </div>
+        </div>
+        <!-- PR Newswire -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Analista e Full Stack Developer</h4>
+            <h6 class="card-subtitle mb-2">PR Newswire (02/2017 – 07/2017)</h6>
+            <p class="card-text">
+              Desenvolvimento de sistemas de gestão, processos e análise de dados.
+              Stack: Angular, Node.js, PHP (Laravel, CodeIgniter, Symfony),
+              modelagem de banco de dados e metodologia ágil.
+            </p>
+          </div>
+        </div>
+        <!-- Accenture -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Analista e Software Developer</h4>
+            <h6 class="card-subtitle mb-2">Accenture (09/2016 – 02/2017)</h6>
+            <p class="card-text">
+              Desenvolvimento de sistemas para financiamento, utilizando Bootstrap 4, Angular (JS e 2),
+              Node.js, Java 8, Hibernate e Spring.
+              Integração com serviços internos e bancos de dados corporativos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCAÇÃO (fundo preto, título #4fa6db) -->
+  <section id="educacao">
+    <div class="container">
+      <h2 class="section-title">Educação</h2>
+      <p class="section-subtitle">
+        Formação acadêmica e cursos que apoiam minha atuação em tecnologia.
+      </p>
+      <div class="row g-4">
+        <!-- FIAP MBA Arquitetura de Soluções -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">MBA em Arquitetura de Soluções</h4>
+            <h6 class="card-subtitle mb-2">FIAP (Período de realização)</h6>
+            <p class="card-text">
+              Pós-graduação focada em padrões de arquitetura, escalabilidade, microserviços,
+              cloud computing e DevOps, capacitando para o desenho de soluções robustas
+              e alinhadas às necessidades de negócio.
+            </p>
+          </div>
+        </div>
+        <!-- IFSP -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Sistemas de Informação</h4>
+            <h6 class="card-subtitle mb-2">IFSP (07/2011 – 07/2017)</h6>
+            <p class="card-text">
+              Foco em análise, desenvolvimento e manutenção de sistemas de informação.
+              Projetos práticos envolvendo programação, banco de dados e metodologias de software.
+            </p>
+          </div>
+        </div>
+        <!-- Fleming -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Computer Engineer Technology</h4>
+            <h6 class="card-subtitle mb-2">Sir Sandford Fleming College (09/2014 – 05/2015)</h6>
+            <p class="card-text">
+              Engenharia de computação, gerência de projetos e design de sistemas complexos.
+              Bolsa Science Without Borders e Academic Excellence Award.
+            </p>
+          </div>
+        </div>
+        <!-- TecnoPonta -->
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <h4 class="card-title">Technical Course PHP + MySQL</h4>
+            <h6 class="card-subtitle mb-2">TecnoPonta (02/2011 – 03/2011)</h6>
+            <p class="card-text">
+              Desenvolvimento de páginas dinâmicas, integração com bancos de dados,
+              soluções de e-commerce e lojas virtuais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / FOOTER -->
+  <section class="p-0" id="contato">
+    <footer class="mt-5">
+      <div class="container">
+        <h2 class="section-title">Contato</h2>
+        <p class="section-subtitle">
+          Interessado(a) em conversar sobre oportunidades, projetos ou parcerias?
+        </p>
+        <div class="row">
+          <div class="col-12">
+            <p style="text-align:center; margin-bottom:0.5rem;">
+              <strong>Telefone:</strong> <br>
+              <span style="font-size:1rem;">+55 (11) 96956-1678</span> <br><br>
+              <strong>E-mail:</strong> <br>
+              <a href="mailto:joao.mazza@hotmail.com" class="footer-link">joao.mazza@hotmail.com</a>
+            </p>
+            <p style="text-align:center;">
+              <a
+                href="https://www.linkedin.com/in/jo%C3%A3o-mazza/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-link"
+              >
+                LinkedIn
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color:#333;">
       <p>&copy; 2025 João Mazza - Todos os direitos reservados.</p>
     </footer>
   </section>
 
+  <!-- Bootstrap 5 JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
