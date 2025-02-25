@@ -15,7 +15,7 @@ Este repositório contém o código-fonte do meu **portfólio pessoal**, apresen
 - **Animações**: Partículas flutuantes no Hero, inspiradas em sites como **DW3**.
 - **Badges e Ícones**: Uso de [Shields.io](https://shields.io) para exibir as tecnologias dominadas.
 
----## Stack & Tecnologias
+## Stack & Tecnologias
 
 Abaixo estão as principais tecnologias que utilizo em meus projetos, organizadas por tópicos:
 
