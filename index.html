@@ -1,101 +1,450 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Mazza - Portfólio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .hero {
-            background: linear-gradient(to right, #007bff, #6610f2);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .section-title {
-            margin-top: 50px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - João Mazza</title>
+  <!-- Favicon -->
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/code.png" type="image/png"/>
+
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Layout do cabeçalho e navegação */
+    header {
+      width: 100%;
+      height: 80px;
+      background-color: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #57d4ff;
+    }
+
+    /* Seção hero (Home) */
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 80px; /* compensar o header fixo */
+    }
+
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      background-color: #57d4ff;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #2ba6d3;
+    }
+
+    /* Seções gerais */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #57d4ff;
+      margin: 0.5rem auto;
+    }
+
+    /* Seção Sobre */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .about-content p {
+      margin: 0.5rem 0;
+      text-align: justify;
+    }
+
+    /* Seção experiências (Acadêmicas e Profissionais) */
+    .experience-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .experience-item {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .experience-item h3 {
+      margin-bottom: 0.5rem;
+    }
+    .experience-item span {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    .experience-item p {
+      text-align: justify;
+    }
+
+    /* Seção Skills (soft/hard) */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .soft-skills, .hard-skills {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .soft-skills ul, .hard-skills ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    /* Seção Projetos */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-item {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .project-item h3 {
+      margin-bottom: 0.5rem;
+    }
+    .project-item a {
+      color: #57d4ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .project-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Seção Contato / Rodapé */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+    footer a {
+      color: #57d4ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+    }
+
+  </style>
 </head>
 <body>
-    
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">João Mazza</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experiência</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                </ul>
-            </div>
-        </div>
+
+  <!-- Cabeçalho / Navegação -->
+  <header>
+    <div class="logo">João Mazza</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#academico">Acadêmico</a></li>
+        <li><a href="#profissional">Profissional</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Olá, eu sou João Mazza</h1>
-            <p>Tech Lead e Fullstack Developer com mais de 11 anos de experiência.</p>
-        </div>
-    </section>
-    
-    <!-- Sobre -->
-    <section id="about" class="container text-center py-5">
-        <h2 class="section-title">Sobre Mim</h2>
-        <p>Especialista em desenvolvimento de software para diversas plataformas, incluindo web, mobile e desktop.</p>
-    </section>
-    
-    <!-- Habilidades -->
-    <section id="skills" class="container py-5">
-        <h2 class="section-title text-center">Habilidades</h2>
-        <div class="row text-center mt-4">
-            <div class="col-md-4">
-                <h4>Frontend</h4>
-                <p>HTML5, CSS3, Bootstrap, Angular, React</p>
-            </div>
-            <div class="col-md-4">
-                <h4>Backend</h4>
-                <p>Java, Spring Boot, Node.js, PHP, .NET</p>
-            </div>
-            <div class="col-md-4">
-                <h4>DevOps</h4>
-                <p>Docker, Kubernetes, Jenkins, CI/CD</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Experiência -->
-    <section id="experience" class="container py-5">
-        <h2 class="section-title text-center">Experiência Profissional</h2>
-        <ul class="list-group mt-4">
-            <li class="list-group-item">Tech Lead - DW3 Tecnologia (2019 - Atual)</li>
-            <li class="list-group-item">Fullstack Developer - SPC Brasil (2018 - 2019)</li>
-            <li class="list-group-item">Tech Lead - Ortiz Gaming (2017 - 2018)</li>
+  </header>
+
+  <!-- Seção Home/Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Bem-vindo(a) ao meu Portfólio</h1>
+      <p>Sou desenvolvedor e entusiasta de tecnologia, sempre em busca de novas soluções e desafios.</p>
+      <a href="#sobre" class="btn-primary">Saiba Mais</a>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <div class="about-content">
+      <p>
+        Olá, meu nome é <strong>João Mazza</strong>. Tenho experiência em desenvolvimento de software e diversas
+        iniciativas envolvendo tecnologia. Ao longo da minha carreira, trabalhei com <em>front-end</em> e <em>back-end</em>, 
+        lidando com projetos de diferentes setores. Acredito no poder da inovação para simplificar processos e 
+        facilitar a vida das pessoas.
+      </p>
+      <p>
+        Sou graduado em [<em>Seu Curso</em>] pela [<em>Sua Instituição</em>] e atualmente busco aprimorar minhas habilidades 
+        em [<em>Linguagem ou Framework de interesse</em>]. Possuo também forte interesse em metodologias ágeis, 
+        DevOps e cultura de entrega contínua.
+      </p>
+      <p>
+        <strong>Resumo da Carreira:</strong> Focado na entrega de resultados, tenho <em>X anos de experiência</em> na área 
+        de TI, já atuei como [<em>Função</em>] em empresas de grande e médio porte, participando ativamente do 
+        desenvolvimento de soluções escaláveis e colaborando em equipes multidisciplinares.
+      </p>
+      <p>
+        Para mais detalhes, visite meu <a href="https://www.linkedin.com/in/jo%C3%A3o-mazza/" target="_blank">LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção Experiências Acadêmicas -->
+  <section id="academico">
+    <h2>Experiências Acadêmicas</h2>
+    <div class="experience-container">
+      <!-- Exemplo 1 -->
+      <div class="experience-item">
+        <h3>Bacharelado em Ciência da Computação</h3>
+        <span>[Universidade XYZ] | [2016 - 2020]</span>
+        <p>
+          Durante o curso, participei de projetos de pesquisa focados em Inteligência Artificial e 
+          de grupos de extensão voltados para desenvolvimento web e mobile. Também fui monitor de 
+          Estrutura de Dados e participei de competições de programação.
+        </p>
+      </div>
+
+      <!-- Exemplo 2 -->
+      <div class="experience-item">
+        <h3>Pós-Graduação em Engenharia de Software</h3>
+        <span>[Instituição ABC] | [2021 - 2022]</span>
+        <p>
+          Aprofundei meus conhecimentos em padrões de projeto, arquitetura de software 
+          e metodologias ágeis. Desenvolvi um projeto final aplicando Microservices e 
+          Cloud Computing em uma aplicação de e-commerce.
+        </p>
+      </div>
+      
+      <!-- Adicione mais conforme suas experiências -->
+    </div>
+  </section>
+
+  <!-- Seção Experiências Profissionais -->
+  <section id="profissional">
+    <h2>Experiências Profissionais</h2>
+    <div class="experience-container">
+      <!-- Exemplo 1 -->
+      <div class="experience-item">
+        <h3>Desenvolvedor Full Stack</h3>
+        <span>Empresa 1 | [2022 - Presente]</span>
+        <p>
+          Responsável pelo desenvolvimento e manutenção de aplicações web em [React.js, Node.js, etc.]. 
+          Participei de todo o ciclo de vida do produto, desde a concepção até a implantação em 
+          ambiente de produção. Trabalhei em conjunto com equipes de Design e QA, seguindo metodologias ágeis.
+        </p>
+      </div>
+
+      <!-- Exemplo 2 -->
+      <div class="experience-item">
+        <h3>Analista de Sistemas</h3>
+        <span>Empresa 2 | [2019 - 2022]</span>
+        <p>
+          Atuei na análise, especificação e implementação de soluções em [Java, Spring Boot, etc.]. 
+          Integrei sistemas corporativos, fiz tunning de banco de dados e implementei boas práticas de 
+          desenvolvimento, como testes unitários e code review. 
+        </p>
+      </div>
+      
+      <!-- Adicione outras experiências conforme sua trajetória -->
+    </div>
+  </section>
+
+  <!-- Seção Soft Skills e Hard Skills -->
+  <section id="skills">
+    <h2>Habilidades</h2>
+    <div class="skills-container">
+      <div class="soft-skills">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Comunicação</li>
+          <li>Trabalho em Equipe</li>
+          <li>Proatividade</li>
+          <li>Flexibilidade</li>
+          <li>Resiliência</li>
         </ul>
-    </section>
-    
-    <!-- Contato -->
-    <section id="contact" class="container text-center py-5">
-        <h2 class="section-title">Contato</h2>
-        <p>Email: joao.mazza@hotmail.com | LinkedIn: <a href="https://linkedin.com/in/joão-mazza-2984a683" target="_blank">Meu LinkedIn</a></p>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 João Mazza - Todos os direitos reservados.</p>
+      </div>
+
+      <div class="hard-skills">
+        <h3>Hard Skills (com Badges)</h3>
+        <ul>
+          <!-- Exemplos de badges usando shields.io -->
+          <li>
+            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge"/>
+          </li>
+          <li>
+            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 Badge"/>
+          </li>
+          <li>
+            <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge"/>
+          </li>
+          <li>
+            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Badge"/>
+          </li>
+          <li>
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"/>
+          </li>
+          <!-- Adicione outras badges conforme suas stacks -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Projetos -->
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projects-container">
+      <!-- Projeto Exemplo 1 -->
+      <div class="project-item">
+        <h3>Projeto XYZ</h3>
+        <p>
+          Aplicação web desenvolvida em React e Node.js para gerenciamento de tarefas, com integração 
+          a um banco de dados NoSQL. Destaque para autenticação JWT e testes unitários.
+        </p>
+        <a href="#" target="_blank">Ver no GitHub</a>
+      </div>
+      <!-- Projeto Exemplo 2 -->
+      <div class="project-item">
+        <h3>Projeto ABC</h3>
+        <p>
+          Plataforma de e-commerce criada com Java e Spring Boot, utilizando padrão de microsserviços 
+          e deploy em ambiente cloud. Recursos de carrinho de compras, gateway de pagamento e 
+          integração com serviços de entrega.
+        </p>
+        <a href="#" target="_blank">Ver no GitHub</a>
+      </div>
+      <!-- Adicione quantos projetos desejar -->
+    </div>
+  </section>
+
+  <!-- Seção Contato / Rodapé -->
+  <section id="contato">
+    <footer>
+      <h2>Contato</h2>
+      <p>Quer conversar sobre projetos ou oportunidades?</p>
+      <p>Envie um e-mail para: <a href="mailto:seuemail@dominio.com">seuemail@dominio.com</a></p>
+      <p>Ou acesse meu <a href="https://www.linkedin.com/in/jo%C3%A3o-mazza/" target="_blank">LinkedIn</a>.</p>
+      <p>
+        Referências de design e portfólio:
+        <a href="https://github.com/emmabostian/developer-portfolios?tab=readme-ov-file" target="_blank">GitHub Portfolios</a>, 
+        <a href="https://avisek.codeltix.com/" target="_blank">Avisek</a>, 
+        <a href="https://m-mazza.github.io/sobremim/" target="_blank">M-Mazza</a>.
+      </p>
+      <p>&copy; 2025 João Mazza - Todos os direitos reservados.</p>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </section>
+
 </body>
 </html>
