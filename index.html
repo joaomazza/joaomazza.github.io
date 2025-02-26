@@ -17,6 +17,11 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
@@ -64,41 +69,46 @@
     </nav>
 
     <section class="section" id="hero">
-        <div class="section-content">
-            <!-- Partículas animadas -->
-            <div class="particles-wrap">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
-
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-text">
-                <h1 class="hero-title">João Mazza</h1>
-                <p class="hero-subtitle">Tech Lead & Full Stack Engineer</p>
-                <p class="hero-description">
-                    Com mais de 15 anos de experiência, atuando em projetos inovadores,
-                    liderando equipes multidisciplinares e desenvolvendo soluções
-                    escaláveis. Especialista em tecnologias modernas, automação e
-                    arquitetura de software.
-                </p>
-                <a href="#sobre" class="hero-btn">Saiba Mais</a>
-                </div>
-                <div class="hero-image">
-                <img
-                    src="https://media.licdn.com/dms/image/v2/C4E03AQHE7ZrGrjikkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516891192497?e=1746057600&v=beta&t=_djckfQ2sTuIDloRlhTFmh8ofFcaTj9PMztWdlVjqgM"
-                    alt="João Mazza"
-                    class="profile-photo"
-                />
-                </div>
-            </div>
+      <div class="section-content">
+        <!-- Partículas animadas -->
+        <div class="particles-wrap">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
         </div>
+
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+          <div class="hero-text">
+            <h1 class="hero-title">João Mazza</h1>
+            <p class="hero-subtitle">Tech Lead & Full Stack Engineer</p>
+            <p class="hero-description">
+              Com mais de 15 anos de experiência, atuando em projetos
+              inovadores, liderando equipes multidisciplinares e desenvolvendo
+              soluções escaláveis. Especialista em tecnologias modernas,
+              automação e arquitetura de software.
+            </p>
+            <a href="#sobre" class="hero-btn">Saiba Mais</a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://media.licdn.com/dms/image/v2/C4E03AQHE7ZrGrjikkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516891192497?e=1746057600&v=beta&t=_djckfQ2sTuIDloRlhTFmh8ofFcaTj9PMztWdlVjqgM"
+              alt="João Mazza"
+              class="profile-photo"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SOBRE MIM (fundo preto, título azul #4fa6db) -->
-    <section  class="section" id="sobre">
+    <section class="section" id="sobre">
+      <div 
+        class="parallax-bg" 
+        style="background-image: url('https://picsum.photos/id/1015/1400/900');">
+      </div>
+      <div class="sobre-overlay"></div>
       <div class="section-content container">
         <h2 class="section-title">Sobre Mim</h2>
         <p class="section-subtitle">
@@ -141,7 +151,7 @@
     </section>
 
     <!-- STACK (fundo preto, título roxo #7f42db) -->
-    <section  class="section"  id="stack" class="py-4">
+    <section class="section" id="stack" class="py-4">
       <div class="section-content container">
         <h2 class="text-center mb-3">Minha Stack</h2>
         <p class="text-center mb-4" style="font-size: 0.95rem">
@@ -304,7 +314,7 @@
     </section>
 
     <!-- PROJETOS (fundo preto, título #6eb1a0) -->
-    <section  class="section"  id="projetos">
+    <section class="section" id="projetos">
       <div class="section-content container">
         <h2 class="section-title">Projetos em Destaque</h2>
         <p class="section-subtitle">
@@ -312,8 +322,7 @@
           liderando equipes, implementando o core tecnológico ou participando de
           forma colaborativa.
         </p>
-        <div class="row g-4">
-          <!-- Projeto 1 -->
+        <!-- <div class="row g-4">
           <div class="col-md-6 col-lg-4">
             <div class="card p-3 h-100">
               <h3 class="card-title">DW3 - Plataforma de Gestão</h3>
@@ -326,7 +335,6 @@
               </p>
             </div>
           </div>
-          <!-- Projeto 2 -->
           <div class="col-md-6 col-lg-4">
             <div class="card p-3 h-100">
               <h3 class="card-title">SPC Brasil - Microfrontends</h3>
@@ -339,7 +347,6 @@
               </p>
             </div>
           </div>
-          <!-- Projeto 3 -->
           <div class="col-md-6 col-lg-4">
             <div class="card p-3 h-100">
               <h3 class="card-title">Ortiz Gaming - Sistemas de Jogos</h3>
@@ -351,7 +358,6 @@
               </p>
             </div>
           </div>
-          <!-- Projeto 4 -->
           <div class="col-md-6 col-lg-4">
             <div class="card p-3 h-100">
               <h3 class="card-title">PR Newswire - Processos e Valuation</h3>
@@ -364,10 +370,49 @@
             </div>
           </div>
         </div>
+        -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide card">
+              <h3>DW3<br><small>Plataforma de Gestão</small></h3>
+              <p>Tech Lead e Full Stack</p>
+              <p>Desenvolvimento de uma plataforma modular para gestão
+                corporativa, integrando front-end (Angular 8, RxJS) com back-end
+                em microserviços (Java Spring, Node.js) e automação de processos
+                (RPA) para reduzir tarefas repetitivas.
+              </p>
+            </div>
+            <div class="swiper-slide card">
+              <h3>SPC Brasil<br><small>SPC Dados</small></h3>
+              <p>Full Stack</p>
+              <p> Implementação de microfrontends em React, Redux e GraphQL.
+                Otimização de ETL e criação de dashboards para relatórios
+                gerenciais. Containerização de serviços com Docker e
+                orquestração em Kubernetes.
+              </p>
+            </div>
+            <div class="swiper-slide card">
+              <h3>Ortiz Gaming<br><small>Sistemas de Jogos</small></h3>
+              <p>Full Stack</p>
+              <p>Desenvolvimento de sistemas administrativos para gerenciar jogos
+                e apostas. Criação de jogos com Phaser JS e Godot, além de
+                integração com back-end em .NET Core e Node.js.</p>
+            </div>
+            <div class="swiper-slide card">
+              <h3>PR Newswire<br><small>Processos</small></h3>
+              <p>Full Stack Developer</p>
+              <p>Criação de sistemas para controle de processos, análise de
+                métricas e valuation. Stack principal usando Angular 2, Node.js
+                e PHP (Laravel, CodeIgniter, Symfony).
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section  class="section"  id="projetos-01">
+    <!-- 
+    <section class="section" id="projetos-01">
       <div class="section-content container">
         <h2 class="section-title">Projetos em Destaque</h2>
         <p class="section-subtitle">
@@ -401,7 +446,7 @@
       </div>
     </section>
 
-    <section  class="section"  id="projetos-02">
+    <section class="section" id="projetos-02">
       <div class="section-content container">
         <h2 class="section-title">Projetos em Destaque</h2>
         <p class="section-subtitle">
@@ -435,7 +480,7 @@
       </div>
     </section>
 
-    <section  class="section"  id="projetos-03">
+    <section class="section" id="projetos-03">
       <div class="section-content container">
         <h2 class="section-title">Projetos em Destaque</h2>
 
@@ -463,7 +508,7 @@
       </div>
     </section>
 
-    <section  class="section"  id="projetos-04">
+    <section class="section" id="projetos-04">
       <div class="section-content container">
         <h2 class="section-title">Projetos em Destaque</h2>
         <p class="section-subtitle">
@@ -493,12 +538,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> 
+    -->
+
     <!-- Adicionando SwiperJS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".swiper-container", {
@@ -514,7 +557,7 @@
     </script>
 
     <!-- EXPERIÊNCIAS (fundo preto, título #fbad17) -->
-    <section  class="section"  id="experiencia">
+    <section class="section" id="experiencia">
       <div class="section-content container">
         <h2 class="section-title">Experiências</h2>
         <p class="section-subtitle">
@@ -595,7 +638,7 @@
     </section>
 
     <!-- EDUCAÇÃO (fundo preto, título #4fa6db) -->
-    <section  class="section"  id="educacao">
+    <section class="section" id="educacao">
       <div class="section-content container">
         <h2 class="section-title">Educação</h2>
         <p class="section-subtitle">
@@ -618,7 +661,7 @@
           <!-- IFSP -->
           <div class="col-md-6">
             <div class="card p-3 h-100">
-              <h4 class="card-title">Sistemas de Informação</h4>
+              <h4 class="card-title">Análise e Desenvolviomento de Sistemas</h4>
               <h6 class="card-subtitle mb-2">IFSP (07/2011 – 07/2017)</h6>
               <p class="card-text">
                 Foco em análise, desenvolvimento e manutenção de sistemas de
@@ -657,25 +700,32 @@
     </section>
 
     <!-- CONTATO / FOOTER -->
-    <section  class="section p-0" id="contato">
-      <footer class="mt-5">
-        <div class="section-content container">
+    <section class="section p-0" id="contato">
+      <div class="section-content container">
+        <footer class="mt-5">
           <h2 class="section-title">Contato</h2>
           <p class="section-subtitle">
             Interessado(a) em conversar sobre oportunidades, projetos ou
             parcerias?
           </p>
           <div class="row">
-            <div class="col-12">
-              <p style="text-align: center; margin-bottom: 0.5rem">
+            <div class="col-4">
                 <strong>Telefone:</strong> <br />
-                <span style="font-size: 1rem">+55 (11) 96956-1678</span>
-                <br /><br />
-                <strong>E-mail:</strong> <br />
+                <p style="text-align: center; margin-bottom: 0.5rem">
+                  <span style="font-size: 1rem">+55 (11) 96956-1678</span>
+                </p>
+              </p>
+            </div>
+            <div class="col-4">
+              <strong>E-mail:</strong> <br />
+              <p style="text-align: center; margin-bottom: 0.5rem">
                 <a href="mailto:joao.mazza@hotmail.com" class="footer-link"
                   >joao.mazza@hotmail.com</a
                 >
               </p>
+            </div>
+            <div class="col-4">
+              <strong>LinkedIn:</strong> <br />
               <p style="text-align: center">
                 <a
                   href="https://www.linkedin.com/in/jo%C3%A3o-mazza/"
@@ -683,39 +733,38 @@
                   rel="noopener noreferrer"
                   class="footer-link"
                 >
-                  LinkedIn
+                  João Mazza
                 </a>
               </p>
             </div>
           </div>
-        </div>
-        <hr style="border-color: #333" />
-        <p>&copy; 2025 João Mazza - Todos os direitos reservados.</p>
-      </footer>
+          <hr style="border-color: #333" />
+          <p>&copy; 2025 João Mazza - Todos os direitos reservados.</p>
+        </footer>
+      </div>
     </section>
-
 
     <!-- Intersection Observer para animar texto das seções -->
     <script>
-        const sections = document.querySelectorAll('.section');
-        const options = {
-            root: null,
-            threshold: 0.3 // quando 30% da seção estiver visível, ativa
-        };
-    
-        const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-            entry.target.classList.add('active');
-            } else {
-            entry.target.classList.remove('active');
-            }
+      const sections = document.querySelectorAll(".section");
+      const options = {
+        root: null,
+        threshold: 0.3, // quando 30% da seção estiver visível, ativa
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active");
+          }
         });
-        }, options);
-    
-        sections.forEach(sec => {
+      }, options);
+
+      sections.forEach((sec) => {
         observer.observe(sec);
-        });
+      });
     </script>
     <!-- Bootstrap 5 JS + Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
