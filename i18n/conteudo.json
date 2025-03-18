@@ -1,0 +1,287 @@
+{
+    "pt": {
+      "title": "João Mazza",
+      "subtitle": "Tech Lead & Full Stack Engineer",
+      "hero_description": "Com mais de 15 anos de experiência, atuando em projetos inovadores, liderando equipes multidisciplinares e desenvolvendo soluções escaláveis. Especialista em tecnologias modernas, automação e arquitetura de software.",
+      "btn_more": "Saiba Mais",
+      "menu": {
+        "home": "Início",
+        "about": "Sobre",
+        "stack": "Stack",
+        "projects": "Projetos",
+        "experience": "Experiências",
+        "education": "Educação",
+        "contact": "Contato"
+      },
+      "about": {
+        "title": "Sobre Mim",
+        "description": "Há mais de 15 anos trabalhando com desenvolvimento de softwares, atuando em projetos de e-commerce, CMS, ERP, CRM, EMR, sistemas bancários e muito mais. Participei de grandes projetos para empresas como Band, Itaú BBA, Michelin, Alcatel, Avaya, Bradesco, Santander, entre outras.",
+        "details": "Possuo experiência em mais de 6 linguagens de programação e atuação multiplataforma (web, mobile, embedded e desktop). Domino metodologias ágeis (Scrum), pipelines de CI/CD (Jenkins, GitLab), conteinerização (Docker, Kubernetes) e boas práticas de arquitetura de software."
+      },
+      "stack": {
+        "title": "Minha Stack",
+        "description": "Tecnologias e ferramentas que utilizo em meus projetos, separadas por tópicos para melhor visualização.",
+        "languages": "Linguagens",
+        "databases": "Base de Dados",
+        "infrastructure": "Infraestrutura & Cloud",
+        "ai": "Inteligência Artificial"
+      },
+      "projects": {
+        "title": "Projetos em Destaque",
+        "description": "Alguns dos principais projetos e soluções nos quais contribuí, seja liderando equipes, desenvolvendo tecnologia essencial ou colaborando em iniciativas estratégicas.",
+        "list": [
+          {
+            "company": "DW3 Tecnologia",
+            "name": "PAG360",
+            "role": "Tech Lead & Desenvolvedor Full Stack",
+            "description": "Desenvolvimento de uma plataforma de gestão financeira focada no processamento de pagamentos, conciliação bancária e automação de relatórios financeiros, garantindo segurança e eficiência nas transações."
+          },
+          {
+            "company": "DW3 Tecnologia",
+            "name": "COB360",
+            "role": "Tech Lead & Desenvolvedor Full Stack",
+            "description": "Desenvolvimento de um sistema avançado de gestão de cobranças, permitindo acompanhamento em tempo real de inadimplências, envio automatizado de notificações e integração com diversos meios de pagamento."
+          },
+          {
+            "company": "SPC Brasil",
+            "name": "SPC Dados",
+            "role": "Desenvolvedor Full Stack",
+            "description": "Criação de uma plataforma de comercialização de dados para CDLs, utilizando tecnologias de Big Data como Hadoop e interface intuitiva para facilitar o acesso e a análise de informações financeiras e de crédito."
+          },
+          {
+            "company": "Ortiz Games",
+            "name": "Roleta Web",
+            "role": "Desenvolvedor Full Stack",
+            "description": "Desenvolvimento de um jogo de roleta para desktop utilizando o framework Electron, proporcionando uma experiência de usuário rica e interativa para jogos de cassino."
+          },
+          {
+            "company": "Ortiz Games",
+            "name": "Modernização de Serviços",
+            "role": "Desenvolvedor Full Stack",
+            "description": "Otimização e modernização dos serviços de gestão de jogos, melhorando a performance do backend e a escalabilidade das plataformas de jogos online."
+          },
+          {
+            "company": "Accenture",
+            "name": "Santander Financiamento",
+            "role": "Desenvolvedor de Software",
+            "description": "Desenvolvimento de sistemas para simulação e contratação de financiamentos de veículos e imóveis, integrando soluções tecnológicas avançadas para agilizar os processos de aprovação de crédito."
+          },
+          {
+            "company": "Lucida",
+            "name": "Ibope Online Band",
+            "role": "Engenheiro de Dados & Desenvolvedor BI",
+            "description": "Implementação de um sistema de monitoramento em tempo real dos acessos e desempenho de conteúdo da Band, utilizando extração de dados via Google Analytics, JavaScript e modelagem de dashboards com QlikView."
+          }
+        ]
+      },
+      "repositories": {
+        "title": "Meus Repositórios",
+        "description": "Confira alguns dos meus projetos no github"
+      },
+      "experience": {
+        "title": "Experiências",
+        "description": "Uma visão geral das minhas principais posições e responsabilidades ao longo da carreira.",
+        "jobs": [
+          {
+            "company": "DW3 Tecnologia",
+            "role": "Tech Lead e Full Stack Developer",
+            "period": "2019 – Atual",
+            "details": "Liderança técnica e desenvolvimento full stack (Angular, RxJS, Java, Node.js, Docker, Jenkins). Foco em automação, CI/CD e infraestrutura de microsserviços."
+          },
+          {
+            "company": "SPC Brasil",
+            "role": "Analista e Full Stack Developer",
+            "period": "2018 – 2019",
+            "details": "Projetos com React, Redux, GraphQL, Node.js e Python, focados em Big Data e comercialização de dados para CDLs."
+          },
+          {
+            "company": "Ortiz Gaming",
+            "role": "Tech Lead & Full Stack Developer",
+            "period": "2017 – 2018",
+            "details": "Liderança de equipe e desenvolvimento de jogos web para administração e operação de cassinos online."
+          },
+          {
+            "company": "Accenture",
+            "role": "Analista e Software Developer",
+            "period": "2016 – 2017",
+            "details": "Desenvolvimento de sistemas para financiamento, utilizando Bootstrap, Angular e Node.js para Santander."
+          }
+        ]
+      },
+      "education": {
+        "title": "Educação",
+        "description": "Formação acadêmica e cursos que apoiam minha atuação em tecnologia.",
+        "list": [
+          {
+            "institution": "FIAP",
+            "course": "MBA em Arquitetura de Soluções",
+            "details": "Pós-graduação focada em padrões de arquitetura, escalabilidade, microserviços, cloud computing e DevOps, capacitando para o desenho de soluções robustas e alinhadas ao mercado."
+          },
+          {
+            "institution": "IFSP (07/2011 – 07/2017)",
+            "course": "Análise e Desenvolvimento de Sistemas",
+            "details": "Foco em análise, desenvolvimento e manutenção de sistemas de informação, abrangendo programação, banco de dados e metodologias de software."
+          },
+          {
+            "institution": "Sir Sandford Fleming College (09/2014 – 05/2015)",
+            "course": "Computer Engineer Technology",
+            "details": "Engenharia de computação, gerenciamento de projetos e design de sistemas complexos. Recebeu a bolsa Science Without Borders e Academic Excellence Award."
+          },
+          {
+            "institution": "TecnoPonta (02/2011 – 03/2011)",
+            "course": "Curso Técnico PHP + MySQL",
+            "details": "Desenvolvimento de páginas dinâmicas, integração com bancos de dados, soluções de e-commerce e lojas virtuais."
+          }
+        ]
+      },
+      "contact": {
+        "title": "Contato",
+        "description": "Interessado(a) em conversar sobre oportunidades, projetos ou parcerias?",
+        "phone": "Telefone:",
+        "resume": "Currículo:"
+      }
+    },
+    "en": {
+      "title": "João Mazza",
+      "subtitle": "Tech Lead & Full Stack Engineer",
+      "hero_description": "With over 15 years of experience leading innovative projects, managing multidisciplinary teams, and developing scalable solutions. Specialist in modern technologies, automation, and software architecture.",
+      "btn_more": "Learn More",
+      "menu": {
+        "home": "Home",
+        "about": "About",
+        "stack": "Stack",
+        "projects": "Projects",
+        "experience": "Experience",
+        "education": "Education",
+        "contact": "Contact"
+      },
+      "about": {
+        "title": "About Me",
+        "description": "With over 15 years of experience in software development, I have worked on e-commerce, CMS, ERP, CRM, EMR, banking systems, and more. I have participated in major projects for companies such as Band, Itaú BBA, Michelin, Alcatel, Avaya, Bradesco, Santander, among others.",
+        "details": "I have expertise in more than six programming languages and extensive experience in multi-platform development (web, mobile, embedded, and desktop). I am proficient in agile methodologies (Scrum), CI/CD pipelines (Jenkins, GitLab), containerization (Docker, Kubernetes), and software architecture best practices."
+      },
+      "stack": {
+        "title": "My Stack",
+        "description": "Technologies and tools I use in my projects, categorized for better clarity.",
+        "languages": "Languages",
+        "databases": "Data Base",
+        "infrastructure": "Infrastructure & Cloud",
+        "ai": "Artificial intelligence"
+      },
+      "repositories": {
+        "title": "My Repositories",
+        "description": "Check out some of my projects on github"
+      },
+      "projects": {
+        "title": "Featured Projects",
+        "description": "Some of the key projects and solutions I have contributed to, whether by leading teams, developing core technology, or collaborating in strategic initiatives.",
+        "list": [
+          {
+            "company": "DW3 Tecnologia",
+            "name": "PAG360",
+            "role": "Tech Lead & Full Stack",
+            "description": "Development of a financial management platform focused on payment processing, bank reconciliation, and financial reporting automation to enhance transaction security and efficiency."
+          },
+          {
+            "company": "DW3 Tecnologia",
+            "name": "COB360",
+            "role": "Tech Lead & Full Stack",
+            "description": "Development of an advanced billing management system, enabling real-time tracking of overdue payments, automated notifications, and integration with multiple payment methods."
+          },
+          {
+            "company": "SPC Brasil",
+            "name": "SPC Dados",
+            "role": "Full Stack Developer",
+            "description": "Creation of a data commerce platform for CDLs, leveraging Big Data technologies such as Hadoop and an intuitive interface to facilitate access and analysis of financial and credit information."
+          },
+          {
+            "company": "Ortiz Games",
+            "name": "Roleta Web",
+            "role": "Full Stack Developer",
+            "description": "Development of a desktop roulette game using Electron framework, delivering a rich and interactive user experience for casino gaming."
+          },
+          {
+            "company": "Ortiz Games",
+            "name": "Modernização de Serviços",
+            "role": "Full Stack Developer",
+            "description": "Optimization and modernization of game management services, improving backend performance and scalability for online gaming platforms."
+          },
+          {
+            "company": "Accenture",
+            "name": "Santander Financiamento",
+            "role": "Software Developer",
+            "description": "Development of financing and credit simulation systems for vehicles and real estate, integrating advanced technology solutions to streamline credit approval processes."
+          },
+          {
+            "company": "Lucida",
+            "name": "Ibope Online Band",
+            "role": "Data Engineer & BI Developer",
+            "description": "Implemented a real-time monitoring system for Band's web traffic and content performance using Google Analytics, JavaScript data extraction, and QlikView BI for dashboard modeling."
+          }
+        ]
+      },
+      "experience": {
+        "title": "Experience",
+        "description": "An overview of my key roles and responsibilities throughout my career.",
+        "jobs": [
+          {
+            "company": "DW3 Tecnologia",
+            "role": "Tech Lead & Full Stack Developer",
+            "period": "2019 – Present",
+            "details": "Technical leadership and full-stack development (Angular, RxJS, Java, Node.js, Docker, Jenkins). Focus on automation, CI/CD, and microservices infrastructure."
+          },
+          {
+            "company": "SPC Brasil",
+            "role": "Analyst & Full Stack Developer",
+            "period": "2018 – 2019",
+            "details": "Projects with React, Redux, GraphQL, Node.js, and Python, focused on Big Data and data commercialization for CDLs."
+          },
+          {
+            "company": "Ortiz Gaming",
+            "role": "Tech Lead & Full Stack Developer",
+            "period": "2017 – 2018",
+            "details": "Team leadership and development of web-based games for casino administration and operations."
+          },
+          {
+            "company": "Accenture",
+            "role": "Software Developer & Analyst",
+            "period": "2016 – 2017",
+            "details": "Development of financing systems using Bootstrap, Angular, and Node.js for Santander."
+          }
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "description": "Academic background and courses supporting my career in technology.",
+        "list": [
+          {
+            "institution": "FIAP",
+            "course": "MBA in Solution Architecture",
+            "details": "Postgraduate program focused on architectural patterns, scalability, microservices, cloud computing, and DevOps, preparing professionals for designing robust solutions aligned with market needs."
+          },
+          {
+            "institution": "IFSP (07/2011 – 07/2017)",
+            "course": "Systems Analysis and Development",
+            "details": "Focused on analysis, development, and maintenance of information systems, covering programming, databases, and software methodologies."
+          },
+          {
+            "institution": "Sir Sandford Fleming College (09/2014 – 05/2015)",
+            "course": "Computer Engineer Technology",
+            "details": "Computer engineering, project management, and complex system design. Recipient of the Science Without Borders scholarship and Academic Excellence Award."
+          },
+          {
+            "institution": "TecnoPonta (02/2011 – 03/2011)",
+            "course": "Technical Course in PHP + MySQL",
+            "details": "Development of dynamic web pages, database integration, e-commerce solutions, and online store platforms."
+          }
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Interested in discussing opportunities, projects, or collaborations?",
+        "phone": "Phone:",
+        "resume": "Resume:"
+      }
+    }
+  }
+  

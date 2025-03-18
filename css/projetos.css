@@ -1,0 +1,128 @@
+/* Estilo geral */
+#projetos {
+    padding: 50px 20px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Título da Seção */
+#projetos .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Galeria de Projetos */
+#projetos .projetos-galeria {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+/* Thumb dos Projetos */
+#projetos .projeto-thumb {
+    flex: 0 0 250px;
+    height: 120px;
+    background: #222;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+    scroll-snap-align: center;
+}
+
+#projetos .projeto-thumb h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#projetos .projeto-thumb p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+#projetos .swiper-container {
+    overflow: hidden;
+}
+
+/* Customização dos botões do Swiper */
+#projetos .swiper-button-next, #projetos .swiper-button-prev {
+    color: var(--color-projetos);
+}
+
+#projetos .projeto-thumb:hover {
+    transform: scale(1.1);
+    background: var(--color-projetos);
+    color: #000;
+}
+
+#projetos .projeto-thumb:hover p {
+    font-size: 1rem;
+    color: #000;
+}
+
+/* Seção Detalhes */
+#projetos .projeto-detalhes {
+    display: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.5s ease-in-out,
+        transform 0.5s ease-in-out;
+    margin-top: 30px;
+}
+
+#projetos .projeto-detalhes.mostrar {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estrutura do Detalhes */
+#projetos .detalhes-content {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    background: #222;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#projetos .detalhes-content img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+#projetos .detalhes-texto h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#projetos .detalhes-texto p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+/* Botão de voltar */
+#projetos .btn-voltar {
+    background: var(--color-projetos);
+    color: #000;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

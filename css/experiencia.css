@@ -1,0 +1,145 @@
+/* Estilo da seção */
+.timeline-section {
+    background-color: #0c0f1a;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contêiner da linha do tempo */
+.timeline-wrapper {
+    height: 100%;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Linha principal */
+.timeline {
+    display: flex;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #1f2333;
+    transform: translateY(-50%);
+}
+
+.timeline-company {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffc107;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Reposicionamento das bolinhas */
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #ffc107;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.timeline-date a {
+    color: black;
+}
+
+/* Datas agora ficam ao lado das bolinhas, sem sobrepor os cards */
+.timeline-date {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 60px); /* Movendo para a esquerda */
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    background: #ffc107;
+    padding: 8px 16px;
+    border-radius: 20px;
+    z-index: 3;
+}
+
+
+/* Itens da timeline */
+.timeline-item {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    margin: 0 40px;
+}
+
+/* Bullet points */
+.timeline-item .bullet {
+    width: 16px;
+    height: 16px;
+    background: var( --color-experiencia);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Conteúdo alternando entre cima e baixo */
+.timeline-item .content {
+    white-space: collapse;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.7;
+
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+}
+
+.timeline-item .content h3 {
+    color: var( --color-experiencia);
+    font-size: 18px;
+}
+
+.timeline-item .content.top {
+    position: absolute;
+    bottom: 40px;
+}
+
+.timeline-item .content.bottom {
+    position: absolute;
+    top: 40px;
+}
+
+/* Animação ao rolar */
+.timeline-item.active .content {
+    opacity: 1;
+}
+
+/* Scroll suave */
+.timeline-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-wrapper::-webkit-scrollbar-thumb {
+    background: var( --color-experiencia);
+    border-radius: 4px;
+}

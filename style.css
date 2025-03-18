@@ -1,360 +1,32 @@
-/* =========================================
-       FONTE E CORES BASE
-    ========================================== */
-:root {
-    --color-sobre: #4fa6db;
-    --color-stack: #7f42db;
-    --color-projetos: #6eb1a0;
-    --color-experiencia: #fbad17;
-    --color-educacao: #4fa6db;
-    --color-contato: #7f42db;
-}
-
-body {
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Evitar scroll horizontal */
-    background-color: #000; /* Fundo preto em todas as seções */
-    color: #f8f8f8; /* Texto claro */
-}
-
-a,
-a:hover,
-a:focus,
-a:visited {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-a {
-    color: #ffc107;
-}
-a:hover {
-    color: #ffd452;
-}
-
-/* =========================================
-         NAVBAR
-      ========================================== */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    z-index: 1000;
-}
-.navbar-brand {
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: #fff !important;
-}
-.navbar-nav .nav-link {
-    color: #fff !important;
-    font-weight: 400;
-}
-.nav-link:hover {
-    color: #ffc107 !important;
-}
-
-/* =========================================
-         HERO
-      ========================================== */
-#hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: url("https://media.licdn.com/dms/image/v2/C4D16AQEpzt9laRcD4A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1647012597871?e=1746057600&v=beta&t=cN4IcyGUlgyXH5PD7KVQ5a4NVQnFi535_mBjdhTz96k")
-        center center no-repeat #000;
-    color: #fff;
-    overflow: hidden; /* para conter partículas animadas */
-}
-
-/* Overlay do Hero */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-}
-
-.sobre-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(4, 23, 65, 0.8);
-    z-index: -1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 0 1rem;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-}
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    max-width: 800px;
-}
-.hero-btn {
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    border: 2px solid #ffc107;
-    color: #ffc107;
-    background-color: transparent;
-}
-.hero-btn:hover {
-    background-color: #ffc107;
-    color: #000;
-}
-
-/* HERO SECTION */
-#hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #000;
-    color: #fff;
-    text-align: left;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    z-index: 2;
-}
-
-.hero-text {
-    max-width: 50%;
-}
-
-.hero-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: #ffc107;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.hero-btn {
-    display: inline-block;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    border: 2px solid #ffc107;
-    color: #ffc107;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-}
-
-.hero-btn:hover {
-    background-color: #ffc107;
-    color: #000;
-}
-
-/* HERO IMAGE */
-.hero-image {
-    max-width: 40%;
-}
-
-.profile-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 8px solid #fff;
-    object-fit: cover;
-    display: block;
-}
-
-/* =========================================
-         ANIMAÇÃO - PARTÍCULAS
-      ========================================== */
-.particles-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-}
-.particle {
-    position: absolute;
-    background-color: #ffd452;
-    opacity: 0.6;
-    border-radius: 50%;
-    animation: floatParticle 10s linear infinite;
-}
-.particle:nth-child(1) {
-    width: 40px;
-    height: 40px;
-    top: 20%;
-    left: 10%;
-    animation-duration: 12s;
-}
-.particle:nth-child(2) {
-    width: 30px;
-    height: 30px;
-    top: 50%;
-    left: 40%;
-    animation-duration: 9s;
-}
-.particle:nth-child(3) {
-    width: 60px;
-    height: 60px;
-    top: 70%;
-    left: 70%;
-    animation-duration: 15s;
-}
-.particle:nth-child(4) {
-    width: 20px;
-    height: 20px;
-    top: 30%;
-    left: 80%;
-    animation-duration: 11s;
-}
-
-@keyframes floatParticle {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-    50% {
-        transform: translateY(-50px) translateX(30px);
-    }
-    100% {
-        transform: translateY(0) translateX(0);
-    }
-}
-
-/* =========================================
-         SEÇÕES
-         Mantemos todas com fundo preto,
-         Mas destacamos TÍTULOS com cores diferentes
-      ========================================== */
-
-section {
-    padding: 4rem 1rem;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 3rem;
-    max-width: 800px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-/* Seção base - cada uma tem 100vh */
-.section {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-}
-
-.section-content {
-    transition:
-        transform 0.7s ease,
-        opacity 0.7s ease;
-    transform: translateY(30px);
-    opacity: 0;
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-/* Quando a seção está "visível" no viewport, ativamos a transição */
-.section.active .section-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* Fundo parallax */
-.parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Parallax em desktops */
-    z-index: -1;
-}
-
-/* Fallback para iOS mobile */
-@supports (-webkit-overflow-scrolling: touch) {
-    .parallax-bg {
-        background-attachment: scroll; /* remove fixo no iOS */
-    }
-}
-
-.text-highlight {
-    color: #ffd452;
-    font-weight: 600;
-}
+@import url("css/main.css");
+@import url("css/menu.css");
+@import url("css/hero.css");
+@import url("css/experiencia.css");
+@import url("css/projetos.css");
+@import url("css/repositorios.css");
+@import url("css/rodape.css");
 
 /* Cores específicas para cada seção (apenas no TÍTULO) */
 #sobre .section-title {
     color: var(--color-sobre);
 }
+
 #stack .section-title {
     color: var(--color-stack);
 }
+
 #projetos .section-title {
     color: var(--color-projetos);
 }
-#experiencia .section-title {
+
+#experiencias .section-title {
     color: var(--color-experiencia);
 }
+
 #educacao .section-title {
     color: var(--color-educacao);
 }
+
 #contato .section-title {
     color: var(--color-contato);
 }
@@ -371,126 +43,30 @@ section {
     transition: transform 0.3s ease;
 }
 
-#projetos .card {
-    padding: 10px;
-    min-height: 44vh;
-    display: flex;
-    align-items: center;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-title {
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-.card-subtitle {
-    font-weight: 300;
-    margin-bottom: 1rem;
-}
-.card-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-/* =========================================
-         FOOTER
-      ========================================== */
-footer {
-    padding: 2rem 1rem;
-}
-
-footer p {
-    margin: 0;
-    color: #888;
-    font-size: 0.9rem;
-    text-align: center;
-}
-.footer-link {
-    color: #ffc107;
-}
-.footer-link:hover {
-    color: #ffd452;
-}
-
-#projetos-01 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
-}
-
-#projetos-01 .card {
-    background: #222;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-#projetos-01 .card:hover {
-    transform: scale(1.05);
-}
-
-#projetos-02 .swiper-container {
-    width: 100%;
-    padding: 20px;
-}
-#projetos-02 .card {
-    background: #222;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-#projetos-02 .card:hover {
-    transform: scale(1.05);
-}
-
-#projetos-03 .zigzag-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 40px;
-}
-
-#projetos-03 .zigzag-item {
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-#projetos-03 .img-bg {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
+/* Layout responsivo para telas menores */
 @media (max-width: 768px) {
-    #projetos-03 .zigzag-item {
-        width: 100%;
+    .section-content {
+        max-width: 100%;
     }
-}
-#projetos-04 .hover-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-#projetos-04 .hover-card {
-    width: 300px;
-    padding: 20px;
-    background: #222;
-    border-radius: 10px;
-    text-align: center;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-#projetos-04 .hover-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 5px 15px rgba(255, 193, 7, 0.5);
+    .section-subtitle {
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+        max-width: 80vw;
+        white-space: break-spaces;
+    }
+    .hero-container {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .hero-text {
+        max-width: 100%;
+    }
+    .hero-image {
+        max-width: 100%;
+    }
+    .hero-image .profile-photo {
+        width: 120px;
+        height: 120px;
+        border: 4px solid #fff;
+    }
 }

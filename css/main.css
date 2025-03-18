@@ -1,0 +1,214 @@
+/* =========================================
+    FONTE E CORES BASE
+========================================== */
+:root {
+    --color-sobre: #4fa6db;
+    --color-stack: #7f42db;
+    --color-projetos: #6eb1a0;
+    --color-experiencia: #fbad17;
+    --color-educacao: #4fa6db;
+    --color-contato: #7f42db;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    background-color: #000; /* Fundo preto em todas as seções */
+    color: #f8f8f8; /* Texto claro */
+}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a {
+    color: #ffc107;
+}
+a:hover {
+    color: #ffd452;
+}
+
+.lang-switcher button {
+    border: none;
+    background: none;
+}
+
+/* =========================================
+    ANIMAÇÃO - PARTÍCULAS
+========================================== */
+
+.particles-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+.particle {
+    position: absolute;
+    opacity: 0.6;
+    border-radius: 50%;
+    animation: floatParticle 10s linear infinite;
+}
+.particle:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    top: 15%;
+    left: 50%;
+    animation-duration: 12s;
+    background-color: var(--color-projetos);
+}
+.particle:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 0%;
+    animation-duration: 9s;
+    background-color: var(--color-experiencia);
+}
+.particle:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 70%;
+    left: 90%;
+    animation-duration: 15s;
+    background-color: var(--color-educacao);
+}
+.particle:nth-child(4) {
+    width: 20px;
+    height: 20px;
+    top: 30%;
+    left: 80%;
+    animation-duration: 11s;
+    background-color: var(--color-contato);
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+
+/* =========================================
+    SEÇÕES
+    Mantemos todas com fundo preto,
+    Mas destacamos TÍTULOS com cores diferentes
+========================================== */
+section {
+    padding: 4rem 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Seção base - cada uma tem 100vh */
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.section-content {
+    transform: translateY(50px); /* Começa levemente deslocado */
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    opacity: 0;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Quando a seção está "visível" no viewport, ativamos a transição */
+.section.active .section-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.section:not(.active) .section-content {
+    opacity: 0;
+    transform: translateY(-50px); /* Move para cima ao sair */
+}
+
+/* Fundo parallax */
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax em desktops */
+    z-index: -1;
+}
+
+/* Fallback para iOS mobile */
+@supports (-webkit-overflow-scrolling: touch) {
+    .parallax-bg {
+        background-attachment: scroll; /* remove fixo no iOS */
+    }
+}
+
+.text-highlight {
+    color: #ffd452;
+    font-weight: 600;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
